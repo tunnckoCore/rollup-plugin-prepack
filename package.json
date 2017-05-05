@@ -37,7 +37,19 @@
   "files": [
     "index.js"
   ],
-  "keywords": [],
+  "keywords": [
+    "optimize",
+    "facebook",
+    "prepack",
+    "bundler",
+    "optimizer",
+    "bundles",
+    "pack",
+    "packager",
+    "rollup-plugin",
+    "plugin",
+    "rollup"
+  ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
