@@ -1,0 +1,88 @@
+{
+  "name": "rollup-plugin-prepack",
+  "version": "0.2.2",
+  "description": "Rollup plugin for Facebook Prepack - https://prepack.io",
+  "repository": "tunnckoCore/rollup-plugin-prepack",
+  "author": "Charlike Mike Reagent <@tunnckoCore> (https://i.am.charlike.online)",
+  "precommit.silent": true,
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "standard index.js test.js --fix --verbose",
+    "test": "npm-run-all -s lint test:*",
+    "test:api": "nyc --reporter lcov node test.js",
+    "test:report": "nyc report",
+    "prerelease": "npm test",
+    "release": "standard-version --sign --no-verify",
+    "git": "npm-run-all -s git:*",
+    "git:add": "git add --all",
+    "git:cz": "git-cz",
+    "commit": "npm-run-all -s test git"
+  },
+  "dependencies": {
+    "prepack": "^0.2.0",
+    "rollup-pluginutils": "^2.0.1"
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "mukla": "^0.4.9",
+    "npm-run-all": "^4.0.2",
+    "nyc": "^10.3.0",
+    "pre-commit": "^1.2.2",
+    "rollup": "^0.41.6",
+    "standard": "^10.0.2",
+    "standard-version": "^4.0.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "verb": {
+    "run": true,
+    "toc": {
+      "render": true,
+      "method": "preWrite",
+      "maxdepth": 3
+    },
+    "layout": "empty",
+    "tasks": [
+      "readme"
+    ],
+    "related": {
+      "list": [
+        "always-done",
+        "minibase",
+        "try-catch-core"
+      ],
+      "highlight": "prepack"
+    },
+    "lint": {
+      "reflinks": true
+    },
+    "reflinks": [
+      "always-done",
+      "async-done",
+      "base",
+      "charlike",
+      "commitizen",
+      "dezalgo",
+      "once",
+      "standard-version",
+      "verb",
+      "verb-generate-readme"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "lines": 100
+  }
+}

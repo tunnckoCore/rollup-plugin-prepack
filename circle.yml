@@ -1,0 +1,9 @@
+dependencies:
+  override:
+    - nvm use 6 && yarn install
+
+test:
+  override:
+    - nvm use 6 && yarn test
+  post:
+    - bash <(curl -s https://codecov.io/bash)
