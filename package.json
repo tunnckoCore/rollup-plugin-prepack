@@ -58,6 +58,9 @@
       "list": [
         "always-done",
         "minibase",
+        "dush",
+        "dush-router",
+        "gibon",
         "try-catch-core"
       ],
       "highlight": "prepack"

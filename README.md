@@ -1,10 +1,8 @@
 # rollup-plugin-prepack [![npm version][npmv-img]][npmv-url] [![github tags][ghtag-img]][ghtag-url] [![mit license][license-img]][license-url]
 
-> Rollup plugin for Facebook's Prepack - https://prepack.io
+> Rollup plugin for Facebook Prepack - https://prepack.io
 
 You might also be interested in [prepack](https://github.com/facebook/prepack).
-
-**TODO: Tests and Github repo tomorrow. Currently don't have NVM and I don't have Node < 7, so can't install prepack.**
 
 ## Quality 👌
 
@@ -60,7 +58,6 @@ with love at [Sofia, Bulgaria][bulgaria-url] 🇧🇬.
 ## Table of Contents
 - [Install](#install)
 - [Usage](#usage)
-- [API](#api)
 - [Related](#related)
 - [Contributing](#contributing)
 - [Building docs](#building-docs)
@@ -93,15 +90,16 @@ export default {
   entry: 'src/index.js',
   dest: 'dist/optimized.js',
   plugins: [prepack({
-    some: 'prepack config'
+    some: 'prepack options'
   })]
 }
 ```
 
-## API
-
 ## Related
 - [always-done](https://www.npmjs.com/package/always-done): Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions. A drop-in replacement… [more](https://github.com/hybridables/always-done#readme) | [homepage](https://github.com/hybridables/always-done#readme "Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions. A drop-in replacement for [async-done][] - pass 100% of its tests plus more")
+- [dush-router](https://www.npmjs.com/package/dush-router): A simple regex-based router for `dush`, `base`, `minibase` and anything based on them. Works on Browser and Node.js | [homepage](https://github.com/tunnckocore/dush-router#readme "A simple regex-based router for `dush`, `base`, `minibase` and anything based on them. Works on Browser and Node.js")
+- [dush](https://www.npmjs.com/package/dush): Microscopic & functional event emitter in ~350 bytes, extensible through plugins | [homepage](https://github.com/tunnckocore/dush#readme "Microscopic & functional event emitter in ~350 bytes, extensible through plugins")
+- [gibon](https://www.npmjs.com/package/gibon): Functional client-side router in ~570 bytes, built on HTML5 History API | [homepage](https://github.com/tunnckoCore/gibon#readme "Functional client-side router in ~570 bytes, built on HTML5 History API")
 - [minibase](https://www.npmjs.com/package/minibase): Minimalist alternative for Base. Build complex APIs with small units called plugins. Works well with most of the already existing… [more](https://github.com/node-minibase/minibase#readme) | [homepage](https://github.com/node-minibase/minibase#readme "Minimalist alternative for Base. Build complex APIs with small units called plugins. Works well with most of the already existing [base][] plugins.")
 - [try-catch-core](https://www.npmjs.com/package/try-catch-core): Low-level package to handle completion and errors of sync or asynchronous functions, using [once][] and [dezalgo][] libs. Useful for and… [more](https://github.com/hybridables/try-catch-core#readme) | [homepage](https://github.com/hybridables/try-catch-core#readme "Low-level package to handle completion and errors of sync or asynchronous functions, using [once][] and [dezalgo][] libs. Useful for and used in higher-level libs such as [always-done][] to handle completion of anything.")
 
