@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-prepack",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "Rollup plugin for Facebook Prepack - https://prepack.io",
   "repository": "tunnckoCore/rollup-plugin-prepack",
   "author": "Charlike Mike Reagent <@tunnckoCore> (https://i.am.charlike.online)",
