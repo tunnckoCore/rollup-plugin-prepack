@@ -1,5 +1,7 @@
 # rollup-plugin-prepack [![npm version][npmv-img]][npmv-url] [![github tags][ghtag-img]][ghtag-url] [![mit license][license-img]][license-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tunnckoCore/rollup-plugin-prepack.svg)](https://greenkeeper.io/)
+
 > Rollup plugin for Facebook's Prepack - https://prepack.io
 
 You might also be interested in [prepack](https://github.com/facebook/prepack).
