@@ -30,7 +30,7 @@
     "npm-run-all": "^4.0.2",
     "nyc": "^11.0.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^0.42.0",
+    "rollup": "^0.45.2",
     "standard": "^10.0.2",
     "standard-version": "^4.0.0"
   },
