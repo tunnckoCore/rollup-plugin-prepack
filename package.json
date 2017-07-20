@@ -28,9 +28,9 @@
     "cz-conventional-changelog": "^2.0.0",
     "mukla": "^0.4.9",
     "npm-run-all": "^4.0.2",
-    "nyc": "^10.3.0",
+    "nyc": "^11.0.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^0.41.6",
+    "rollup": "^0.43.1",
     "standard": "^10.0.2",
     "standard-version": "^4.0.0"
   },
