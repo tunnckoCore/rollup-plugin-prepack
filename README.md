@@ -14,7 +14,6 @@ having always up-to-date dependencies through integrations
 like [GreenKeeper][gk-integration-url] and [David-DM][daviddm-url] service,
 this package has top quality.
 
-[![code climate][codeclimate-img]][codeclimate-url]
 [![code style][standard-img]][standard-url]
 [![commitizen friendly][czfriendly-img]][czfriendly-url]
 [![greenkeeper friendly][gkfriendly-img]][gkfriendly-url]
@@ -35,7 +34,6 @@ by [CodeCov][codecov-coverage-url] and [nyc (istanbul)][nyc-istanbul-url].
 [![linux build][circle-img]][circle-url]
 [![windows build][appveyor-img]][appveyor-url]
 [![code coverage][codecov-img]][codecov-url]
-[![nyc coverage][istanbulcov-img]][istanbulcov-url]
 
 ## Support :clap:
 
@@ -168,14 +166,14 @@ _Project scaffolded using [charlike][] cli._
 [codeclimate-url]: https://codeclimate.com/github/tunnckoCore/rollup-plugin-prepack
 [codeclimate-img]: https://img.shields.io/codeclimate/github/tunnckoCore/rollup-plugin-prepack.svg
 
-[circle-url]: https://circleci.com/gh/tunnckoCore/rollup-plugin-prepack
-[circle-img]: https://img.shields.io/circleci/project/github/tunnckoCore/rollup-plugin-prepack/master.svg?label=linux
+[circle-url]: https://circleci.com/gh/olstenlarck/rollup-plugin-prepack
+[circle-img]: https://img.shields.io/circleci/project/github/olstenlarck/rollup-plugin-prepack/master.svg?label=linux
 
 [appveyor-url]: https://ci.appveyor.com/project/tunnckoCore/rollup-plugin-prepack
 [appveyor-img]: https://img.shields.io/appveyor/ci/tunnckoCore/rollup-plugin-prepack/master.svg?label=windows
 
-[codecov-url]: https://codecov.io/gh/tunnckoCore/rollup-plugin-prepack
-[codecov-img]: https://img.shields.io/codecov/c/github/tunnckoCore/rollup-plugin-prepack/master.svg?label=codecov
+[codecov-url]: https://codecov.io/gh/olstenlarck/rollup-plugin-prepack
+[codecov-img]: https://img.shields.io/codecov/c/github/olstenlarck/rollup-plugin-prepack/master.svg?label=codecov
 
 [daviddm-deps-url]: https://david-dm.org/tunnckoCore/rollup-plugin-prepack
 [daviddm-deps-img]: https://img.shields.io/david/tunnckoCore/rollup-plugin-prepack.svg
