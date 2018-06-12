@@ -22,16 +22,6 @@ test('should main export return an object with transform() fn', (done) => {
   done()
 })
 
-test('should transform return `null` if `id` not match to filter', (done) => {
-  const plugin = prepack({
-    include: 'foo.html'
-  })
-  const result = plugin.transform('foo bar', 'bar.js')
-
-  test.strictEqual(result, null, 'should `result` of transform() be null')
-  done()
-})
-
 test('should work as real plugin to rollup', (done) => {
   const promise = rollup.rollup({
     entry: 'fixtures/main.js',
@@ -40,13 +30,11 @@ test('should work as real plugin to rollup', (done) => {
 
   return promise
     .then((bundle) => {
-      const result = bundle.generate({ format: 'cjs' })
+      const { code } = bundle.generate({ format: 'cjs' })
+      const expected = /var _\$0 = this;\n\n {2}_\$0\._a = "A";\n {2}_\$0\._b = "B";\n {2}_\$0\._4 = 42;\n/
 
-      test.strictEqual(/var main/.test(result.code), true)
-      test.strictEqual(
-        /_a = \\"A\\";\\n_b = \\"B\\";\\n_4 = 42;/.test(result.code),
-        true
-      )
+      test.strictEqual(/var main/.test(code), true)
+      test.strictEqual(expected.test(code), true)
       done()
     }, done)
     .catch(done)
