@@ -23,19 +23,31 @@ test('should main export return an object with transform() fn', (done) => {
 })
 
 test('should work as real plugin to rollup', (done) => {
+  const filePath = 'fixtures/main.js'
   const promise = rollup.rollup({
-    entry: 'fixtures/main.js',
-    plugins: [prepack()]
+    entry: filePath,
+    plugins: [ prepack() ]
   })
 
   return promise
-    .then((bundle) => {
-      const { code } = bundle.generate({ format: 'cjs' })
-      const expected = /var _\$0 = this;\n\n {2}_\$0\._a = "A";\n {2}_\$0\._b = "B";\n {2}_\$0\._4 = 42;\n/
+    .then(async (bundle) => {
+      const { code } = await bundle.generate({ format: 'cjs' })
+      const expected = /\{\\n\s\svar\s_\$0\s=\sthis;\\n\\n\s\svar\s_0\s=\s\{\\n\s\s\s\s_a:\s\\"A\\",\\n\s\s\s\s_b:\s\\"B\\",\\n\s\s\s\s_4:\s42\\n\s\s\};/
 
       test.strictEqual(/var main/.test(code), true)
       test.strictEqual(expected.test(code), true)
+
       done()
     }, done)
     .catch(done)
+})
+
+test('should transform throws an Error if the code is not valid', (done) => {
+  function fixture () {
+    const plugin = prepack()
+    plugin.transform('foo bar baz')
+  }
+
+  test.throws(fixture, /Syntax error: Unexpected token, expected/)
+  done()
 })

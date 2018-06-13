@@ -10,20 +10,19 @@
 const prepack = require('prepack')
 
 module.exports = function rollupPluginPrepack (options) {
-  const handle = (str) => `export default ${str.trim()}`
-
   return {
     name: 'prepack',
-    transform: (fileContents, filePath) => {
-      const sources = [{
-        fileContents,
-        filePath,
-        // suggest an alternative here
-        sourceMapContents: null
-      }]
+    transform: (fileContents) => {
+      const handle = (str) => `export default ${JSON.stringify(str.trim())}`
 
-      const { code, map } = prepack.prepackSources(sources, options)
-      return { code: handle(code), map }
+      try {
+        const sources = [{ fileContents }]
+        const { code, map } = prepack.prepackSources(sources, options)
+
+        return { code: handle(code), map }
+      } catch (err) {
+        throw err
+      }
     }
   }
 }
