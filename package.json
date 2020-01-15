@@ -35,6 +35,9 @@
   "peerDependencies": {
     "prepack": "^0.2.54"
   },
+  "funding": {
+    "url": "https://ko-fi.com/tunnckoCore/commissions"
+  },
   "files": [
     "index.js"
   ],
