@@ -5,13 +5,12 @@
   "repository": "tunnckoCore/rollup-plugin-prepack",
   "author": "Charlike Mike Reagent <@tunnckoCore> (https://i.am.charlike.online)",
   "precommit.silent": true,
+  "licenseStart": 2017,
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "lint": "standard index.js test.js --fix --verbose",
-    "test": "npm-run-all -s lint test:*",
-    "test:api": "nyc --reporter lcov node test.js",
-    "test:report": "nyc report",
+    "test": "jest --coverage",
     "prerelease": "npm test",
     "release": "standard-version --sign --no-verify",
     "git": "npm-run-all -s git:*",
@@ -19,19 +18,22 @@
     "git:cz": "git-cz",
     "commit": "npm-run-all -s test git"
   },
-  "dependencies": {
-    "prepack": "^0.2.38"
-  },
+  "dependencies": {},
   "devDependencies": {
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
+    "jest": "^24.9.0",
     "mukla": "^0.4.9",
     "npm-run-all": "^4.0.2",
     "nyc": "^10.3.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^0.60.4",
+    "prepack": "^0.2.54",
+    "rollup": "^1.29.0",
     "standard": "^10.0.2",
     "standard-version": "^4.0.0"
+  },
+  "peerDependencies": {
+    "prepack": "^0.2.54"
   },
   "files": [
     "index.js"
@@ -59,7 +61,7 @@
     "toc": {
       "render": true,
       "method": "preWrite",
-      "maxdepth": 3
+      "maxdepth": 4
     },
     "layout": "empty",
     "tasks": [
@@ -92,11 +94,15 @@
       "verb-generate-readme"
     ]
   },
+  "cov": {},
   "nyc": {
     "check-coverage": true,
     "statements": 100,
     "functions": 100,
     "branches": 100,
     "lines": 100
+  },
+  "engines": {
+    "node": ">=10.13"
   }
 }

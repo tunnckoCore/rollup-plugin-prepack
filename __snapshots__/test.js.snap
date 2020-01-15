@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should work as real plugin to rollup 1`] = `
+"'use strict';
+
+var abstractionTax = \\"var some;\\\\n(function () {\\\\n  var _$0 = this;\\\\n\\\\n  var _0 = {\\\\n    _a: \\\\\\"A\\\\\\",\\\\n    _b: \\\\\\"B\\\\\\",\\\\n    _4: 42\\\\n  };\\\\n  _$0.some = _0;\\\\n}).call(this);\\";
+
+module.exports = abstractionTax;
+"
+`;
+
+exports[`should work as real plugin to rollup 2`] = `
+"'use strict';
+
+var envBranching = \\"var fib;\\\\n(function () {\\\\n  var _$1 = this;\\\\n\\\\n  var _7 = function (x) {\\\\n    return x <= 1 ? x : fib(x - 1) + fib(x - 2);\\\\n  };\\\\n\\\\n  _$1.fib = _7;\\\\n\\\\n  var _$0 = _$1.Date.now();\\\\n\\\\n  var _4 = 0 === _$0;\\\\n\\\\n  var _1 = _4 ? 55 : _$0;\\\\n\\\\n  _$1.result = _1;\\\\n}).call(this);\\";
+
+module.exports = envBranching;
+"
+`;
+
+exports[`should work as real plugin to rollup 3`] = `
+"'use strict';
+
+var fibonacci = \\"(function () {\\\\n  var _$0 = this;\\\\n\\\\n  _$0.x = 610;\\\\n}).call(this);\\";
+
+module.exports = fibonacci;
+"
+`;
+
+exports[`should work as real plugin to rollup 4`] = `
+"'use strict';
+
+var helloWorld = \\"var hello, world, s;\\\\n(function () {\\\\n  var _$0 = this;\\\\n\\\\n  var _5 = function () {\\\\n    return 'hello';\\\\n  };\\\\n\\\\n  var _6 = function () {\\\\n    return 'world';\\\\n  };\\\\n\\\\n  _$0.hello = _5;\\\\n  _$0.world = _6;\\\\n  _$0.s = \\\\\\"hello world\\\\\\";\\\\n  console.log(\\\\\\"hello world\\\\\\");\\\\n}).call(this);\\";
+
+module.exports = helloWorld;
+"
+`;

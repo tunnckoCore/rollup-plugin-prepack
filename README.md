@@ -1,81 +1,85 @@
-# rollup-plugin-prepack [![npm version][npmv-img]][npmv-url] [![github tags][ghtag-img]][ghtag-url] [![mit license][license-img]][license-url]
+
+
+# rollup-plugin-prepack [![npm version][npmv-img]][npmv-url] [![License][license-img]][license-url]
 
 > Rollup plugin for Facebook Prepack - https://prepack.io
 
-You might also be interested in [prepack](https://github.com/facebook/prepack).
+Please consider following this project's author, [Charlike Mike Reagent](https://github.com/tunnckoCore), and :star: the project to show your :heart: and support.
 
-## Quality 👌
+<div id="readme"></div>
 
-> By using [commitizen][czfriendly-url] and [conventional commit messages][conventional-messages-url],
-maintaining meaningful [ChangeLog][changelogmd-url]
-and commit history based on [global conventions][conventions-url],
-following [StandardJS][standard-url] code style through [ESLint][eslint-url] and
-having always up-to-date dependencies through integrations
-like [GreenKeeper][gk-integration-url] and [David-DM][daviddm-url] service,
-this package has top quality.
+[![Code style][codestyle-img]][codestyle-url]
+[![CircleCI linux build][linuxbuild-img]][linuxbuild-url]
+[![CodeCov coverage status][codecoverage-img]][codecoverage-url]
+[![DavidDM dependency status][dependencies-img]][dependencies-url]
+[![Renovate App Status][renovateapp-img]][renovateapp-url]
+[![Make A Pull Request][prs-welcome-img]][prs-welcome-url]
+[![Time Since Last Commit][last-commit-img]][last-commit-url]
 
-[![code style][standard-img]][standard-url]
-[![commitizen friendly][czfriendly-img]][czfriendly-url]
-[![greenkeeper friendly][gkfriendly-img]][gkfriendly-url]
-[![dependencies][daviddm-deps-img]][daviddm-deps-url]
-<!-- uncomment when need -->
-<!-- [![develop deps][daviddm-devdeps-img]][daviddm-devdeps-url] -->
+<!-- [![Semantically Released][standard-release-img]][standard-release-url] -->
 
-## Stability 💯
+If you have any _how-to_ kind of questions, please read the [Contributing Guide][contributing-url] and [Code of Conduct][code_of_conduct-url] documents.
+For bugs reports and feature requests, [please create an issue][open-issue-url] or ping
+[@tunnckoCore](https://twitter.com/tunnckoCore) at Twitter.
 
-> By following [Semantic Versioning][semver-url] through [standard-version][] releasing tool,
-this package is very stable and its tests are passing both on [Windows (AppVeyor)][appveyor-ci-url]
-and [Linux (CircleCI)][circle-ci-url] with results
-from 100% to [400%][absolute-coverage-url] test coverage, reported respectively
-by [CodeCov][codecov-coverage-url] and [nyc (istanbul)][nyc-istanbul-url].
+[![Conventional Commits][ccommits-img]][ccommits-url]
+[![Minimum Required Nodejs][nodejs-img]][npmv-url]
+[![NPM Downloads Monthly][downloads-monthly-img]][npmv-url]
+[![NPM Downloads Total][downloads-total-img]][npmv-url]
+[![Share Love Tweet][twitter-share-img]][twitter-share-url]
+[![Twitter][twitter-img]][twitter-url]
 
-[![following semver][following-semver-img]][following-semver-url]
-[![semantic releases][strelease-img]][strelease-url]
-[![linux build][circle-img]][circle-url]
-[![windows build][appveyor-img]][appveyor-url]
-[![code coverage][codecov-img]][codecov-url]
+Project is [semantically](https://semver.org) versioned & almost automatically released from [GitHub Actions](https://github.com/features/actions) / CircleCI.
 
-## Support :clap:
+[![Become a Patron][patreon-img]][patreon-url]
+[![Buy me a Kofi][kofi-img]][kofi-url]
+[![PayPal Donation][paypal-img]][paypal-url]
+[![Bitcoin Coinbase][bitcoin-img]][bitcoin-url]
+[![Keybase PGP][keybase-img]][keybase-url]
 
-> If you have any problems, consider opening [an issue][open-issue-url],
-ping me on twitter ([@tunnckoCore][tunnckocore-twitter-url]),
-join the [support chat][supportchat-url] room
-or queue a [live session][codementor-url] on CodeMentor with me.
-If you don't have any problems, you're using it somewhere or
-you just enjoy this product, then please consider [support me][paypalme-url] at PayPal,
-since this is [OPEN Open Source][opensource-project-url] project made
-with love at [Sofia, Bulgaria][bulgaria-url] 🇧🇬.
+| Topic                                                            |                                           Contact |
+| :--------------------------------------------------------------- | ------------------------------------------------: |
+| Any legal or licensing questions, like private or commerical use |           ![tunnckocore_legal][tunnckocore_legal] |
+| For any critical problems and security reports                   |     ![tunnckocore_security][tunnckocore_security] |
+| Consulting, professional support, personal or team training      | ![tunnckocore_consulting][tunnckocore_consulting] |
+| For any questions about Open Source, partnerships and sponsoring | ![tunnckocore_opensource][tunnckocore_opensource] |
 
-[![tunnckoCore support][supportchat-img]][supportchat-url]
-[![tunnckoCore slack][slackchat-img]][slackchat-url]
-[![code mentor][codementor-img]][codementor-url]
-[![paypal donate][paypalme-img]][paypalme-url]
-[![NPM monthly downloads](https://img.shields.io/npm/dm/rollup-plugin-prepack.svg?style=flat)](https://npmjs.org/package/rollup-plugin-prepack)
-[![npm total downloads][downloads-img]][downloads-url]
+<!-- Logo when needed:
+
+<p align="center">
+  <a href="https://github.com/tunnckoCore/rollup-plugin-prepack">
+    <img src="./media/logo.png" width="85%">
+  </a>
+</p>
+
+-->
+
+<!--
+
+-->
 
 ## Table of Contents
+
 - [Install](#install)
 - [Usage](#usage)
-- [Related](#related)
+- [See Also](#see-also)
 - [Contributing](#contributing)
-- [Building docs](#building-docs)
-- [Running tests](#running-tests)
-- [Author](#author)
+  * [Guides and Community](#guides-and-community)
+  * [Support the project](#support-the-project)
+  * [OPEN Open Source](#open-open-source)
+  * [Wonderful Contributors](#wonderful-contributors)
 - [License](#license)
 
 _(TOC generated by [verb](https://github.com/verbose/verb) using [markdown-toc](https://github.com/jonschlinkert/markdown-toc))_
 
 ## Install
-Install with [npm](https://www.npmjs.com/)
 
-```
-$ npm install rollup-plugin-prepack --save
-```
+This project requires [**Node.js**](https://nodejs.org) **>=10.13** _(see [Support & Release Policy](https://github.com/tunnckoCoreLabs/support-release-policy))_. Install it using
+[**yarn**](https://yarnpkg.com) or [**npm**](https://npmjs.com).<br>
+_We highly recommend to use Yarn when you think to contribute to this project._
 
-or install using [yarn](https://yarnpkg.com)
-
-```
-$ yarn add rollup-plugin-prepack
+```bash
+$ yarn add -D rollup-plugin-prepack prepack
 ```
 
 ## Usage
@@ -85,154 +89,176 @@ $ yarn add rollup-plugin-prepack
 const prepack = require('rollup-plugin-prepack')
 
 export default {
-  entry: 'src/index.js',
-  dest: 'dist/optimized.js',
+  input: 'src/index.js',
+  output: {
+    file: 'dist/optimized.js'
+  },
   plugins: [prepack({
     some: 'prepack options'
   })]
 }
 ```
 
-## Related
-- [always-done](https://www.npmjs.com/package/always-done): Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions. A drop-in replacement… [more](https://github.com/hybridables/always-done#readme) | [homepage](https://github.com/hybridables/always-done#readme "Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions. A drop-in replacement for [async-done][] - pass 100% of its tests plus more")
-- [dush-router](https://www.npmjs.com/package/dush-router): A simple regex-based router for `dush`, `base`, `minibase` and anything based on them. Works on Browser and Node.js | [homepage](https://github.com/tunnckocore/dush-router#readme "A simple regex-based router for `dush`, `base`, `minibase` and anything based on them. Works on Browser and Node.js")
-- [dush](https://www.npmjs.com/package/dush): Microscopic & functional event emitter in ~350 bytes, extensible through plugins | [homepage](https://github.com/tunnckocore/dush#readme "Microscopic & functional event emitter in ~350 bytes, extensible through plugins")
-- [gibon](https://www.npmjs.com/package/gibon): Functional client-side router in ~570 bytes, built on HTML5 History API | [homepage](https://github.com/tunnckoCore/gibon#readme "Functional client-side router in ~570 bytes, built on HTML5 History API")
-- [minibase](https://www.npmjs.com/package/minibase): Minimalist alternative for Base. Build complex APIs with small units called plugins. Works well with most of the already existing… [more](https://github.com/node-minibase/minibase#readme) | [homepage](https://github.com/node-minibase/minibase#readme "Minimalist alternative for Base. Build complex APIs with small units called plugins. Works well with most of the already existing [base][] plugins.")
-- [try-catch-core](https://www.npmjs.com/package/try-catch-core): Low-level package to handle completion and errors of sync or asynchronous functions, using [once][] and [dezalgo][] libs. Useful for and… [more](https://github.com/hybridables/try-catch-core#readme) | [homepage](https://github.com/hybridables/try-catch-core#readme "Low-level package to handle completion and errors of sync or asynchronous functions, using [once][] and [dezalgo][] libs. Useful for and used in higher-level libs such as [always-done][] to handle completion of anything.")
+<!--
+() => include(process.cwd() + '/.verb.md')
+ -->
+
+**[back to top](#readme)**
+
+## See Also
+
+Some of these projects are used here or were inspiration for this one, others are just related. So, thanks for your existance!
+
+- [always-done](https://www.npmjs.com/package/always-done): Handle completion and errors with elegance! Support for streams, callbacks… [more](https://github.com/hybridables/always-done#readme) | [homepage](https://github.com/hybridables/always-done#readme "Handle completion and errors with elegance! Support for streams, callbacks, promises, child processes, async/await and sync functions. A drop-in replacement for [async-done][] - pass 100% of its tests plus more")
+- [dush-router](https://www.npmjs.com/package/dush-router): A simple regex-based router for `dush`, `base`, `minibase` and anything… [more](https://github.com/tunnckocore/dush-router#readme) | [homepage](https://github.com/tunnckocore/dush-router#readme "A simple regex-based router for `dush`, `base`, `minibase` and anything based on them. Works on Browser and Node.js")
+- [dush](https://www.npmjs.com/package/dush): Microscopic & functional event emitter in ~350 bytes, extensible through… [more](https://github.com/tunnckocore/dush#readme) | [homepage](https://github.com/tunnckocore/dush#readme "Microscopic & functional event emitter in ~350 bytes, extensible through plugins")
+- [gibon](https://www.npmjs.com/package/gibon): Functional client-side router in ~570 bytes, built on HTML5 History… [more](https://github.com/tunnckoCore/gibon#readme) | [homepage](https://github.com/tunnckoCore/gibon#readme "Functional client-side router in ~570 bytes, built on HTML5 History API")
+- [minibase](https://www.npmjs.com/package/minibase): Minimalist alternative for Base. Build complex APIs with small units… [more](https://github.com/node-minibase/minibase#readme) | [homepage](https://github.com/node-minibase/minibase#readme "Minimalist alternative for Base. Build complex APIs with small units called plugins. Works well with most of the already existing [base][] plugins.")
+- [try-catch-core](https://www.npmjs.com/package/try-catch-core): Low-level package to handle completion and errors of sync or… [more](https://github.com/hybridables/try-catch-core#readme) | [homepage](https://github.com/hybridables/try-catch-core#readme "Low-level package to handle completion and errors of sync or asynchronous functions, using [once][] and [dezalgo][] libs. Useful for and used in higher-level libs such as [always-done][] to handle completion of anything.")
+
+**[back to top](#readme)**
 
 ## Contributing
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue][open-issue-url].  
-Please read the [contributing guidelines][contributing-url] for advice on opening issues, pull requests, and coding standards.  
-If you need some help and can spent some cash, feel free to [contact me at CodeMentor.io][codementor-url] too.
 
-**In short:** If you want to contribute to that project, please follow these things
+### Guides and Community
 
-1. Please DO NOT edit [README.md](README.md), [CHANGELOG.md][changelogmd-url] and [.verb.md](.verb.md) files. See ["Building docs"](#building-docs) section.
-2. Ensure anything is okey by installing the dependencies and run the tests. See ["Running tests"](#running-tests) section.
-3. Always use `npm run commit` to commit changes instead of `git commit`, because it is interactive and user-friendly. It uses [commitizen][] behind the scenes, which follows Conventional Changelog idealogy.
-4. Do NOT bump the version in package.json. For that we use `npm run release`, which is [standard-version][] and follows Conventional Changelog idealogy.
+Please read the [Contributing Guide][contributing-url] and [Code of Conduct][code_of_conduct-url] documents for advices.
 
-Thanks a lot! :)
+For bug reports and feature requests, please join our [community][community-url] forum and open a thread there with prefixing the title of the thread with the name of the project if there's no separate channel for it.
 
-## Building docs
-Documentation and that readme is generated using [verb-generate-readme][], which is a [verb][] generator, so you need to install both of them and then run `verb` command like that
+Consider reading the [Support and Release Policy](https://github.com/tunnckoCoreLabs/support-release-policy) guide if you are interested in what are the supported Node.js versions and how we proceed. In short, we support latest two even-numbered Node.js release lines.
 
-```
-$ npm install verbose/verb#dev verb-generate-readme --global && verb
-```
+### Support the project
 
-_Please don't edit the README directly. Any changes to the readme must be made in [.verb.md](.verb.md)._
+[Become a Partner or Sponsor?][patreon-url] :dollar: Check the **Partner**, **Sponsor** or **Omega-level** tiers! :tada: You can get your company logo, link & name on this file. It's also rendered on package page in [npmjs.com][npmv-url] and [yarnpkg.com](https://yarnpkg.com/en/package/rollup-plugin-prepack) sites too! :rocket:
 
-## Running tests
-Clone repository and run the following in that cloned directory
+Not financial support? Okey! [Pull requests](https://github.com/tunnckoCoreLabs/contributing#opening-a-pull-request), stars and all kind of [contributions](https://opensource.guide/how-to-contribute/#what-it-means-to-contribute) are always
+welcome. :sparkles:
 
-```
-$ npm install && npm test
-```
+<!--
+### OPEN Open Source
 
-## Author
-**Charlike Mike Reagent**
+This project is following [OPEN Open Source](http://openopensource.org) model
 
-+ [github/tunnckoCore](https://github.com/tunnckoCore)
-+ [twitter/tunnckoCore](https://twitter.com/tunnckoCore)
-+ [codementor/tunnckoCore](https://codementor.io/tunnckoCore)
+> Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit. This project is built on collective efforts and it's not strongly guarded by its founders.
+
+There are a few basic ground-rules for its contributors
+
+1. Any **significant modifications** must be subject to a pull request to get feedback from other contributors.
+2. [Pull requests](https://github.com/tunnckoCoreLabs/contributing#opening-a-pull-request) to get feedback are _encouraged_ for any other trivial contributions, but are not required.
+3. Contributors should attempt to adhere to the prevailing code-style and development workflow.
+-->
+
+### Wonderful Contributors
+
+Thanks to the hard work of these wonderful people this project is alive! It follows the
+[all-contributors](https://github.com/kentcdodds/all-contributors) specification.
+Don't hesitate to add yourself to that list if you have made any contribution! ;) [See how,
+here](https://github.com/jfmengels/all-contributors-cli#usage).
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars3.githubusercontent.com/u/5038030?v=4" width="120px;"/><br /><sub><b>Charlike Mike Reagent</b></sub>](https://tunnckocore.com)<br />[💻](https://github.com/tunnckoCore/rollup-plugin-prepack/commits?author=tunnckoCore "Code") [📖](https://github.com/tunnckoCore/rollup-plugin-prepack/commits?author=tunnckoCore "Documentation") [💬](#question-tunnckoCore "Answering Questions") [👀](#review-tunnckoCore "Reviewed Pull Requests") [🔍](#fundingFinding-tunnckoCore "Funding Finding") |
+| :---: |
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+Consider showing your [support](#support-the-project) to them. :sparkling_heart:
+
+**[back to top](#readme)**
 
 ## License
-Copyright © 2017, [Charlike Mike Reagent](https://i.am.charlike.online). Released under the [MIT License](LICENSE).
 
-***
+Copyright (c) 2017-present, [Charlike Mike Reagent](https://tunnckocore.com) `<opensource@tunnckocore.com>` & [contributors](#wonderful-contributors).<br>
+Released under the [MIT License][license-url].
 
-_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on May 05, 2017._  
-_Project scaffolded using [charlike][] cli._
+[contributing-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/blob/master/CONTRIBUTING.md
+[code_of_conduct-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/blob/master/CODE_OF_CONDUCT.md
+
+<!-- Heading badges -->
+
+[npmv-url]: https://www.npmjs.com/package/rollup-plugin-prepack
+[npmv-img]: https://badgen.net/npm/v/rollup-plugin-prepack?icon=npm
+
+[nodejs-img]: https://badgen.net/badge/node/>=10.13/green
+
+[ghrelease-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/releases/latest
+[ghrelease-img]: https://badgen.net/github/release/tunnckoCore/rollup-plugin-prepack?icon=github
+
+[license-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/blob/master/packages/rollup-plugin-prepack/LICENSE
+[license-img]: https://badgen.net/npm/license/rollup-plugin-prepack
+
+<!-- Front line badges -->
+
+[codestyle-url]: https://github.com/airbnb/javascript
+[codestyle-img]: https://badgen.net/badge/code%20style/airbnb/ff5a5f?icon=airbnb
+[linuxbuild-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/actions
+[linuxbuild-img]: https://badgen.net/circleci/github/tunnckoCore/rollup-plugin-prepack/master?label=build&icon=circleci
+[codecoverage-url]: https://codecov.io/gh/tunnckoCore/rollup-plugin-prepack
+
+[codecoverage-img]: https://badgen.net/badge/coverage/unknown/grey?icon=codecov
+
+[dependencies-url]: https://david-dm.org/tunnckoCore/rollup-plugin-prepack
+[dependencies-img]: https://badgen.net/david/dep/tunnckoCore/rollup-plugin-prepack?label=deps
+[ccommits-url]: https://conventionalcommits.org/
+[ccommits-img]: https://badgen.net/badge/conventional%20commits/v1.0.0/green
+[standard-release-url]: https://github.com/standard-release/standard-release
+[standard-release-img]: https://badgen.net/badge/semantically/released/05c5ff
+[community-img]: https://badgen.net/badge/join/community/7b16ff
+[community-url]: https://github.com/tunnckocorehq/community
+[last-commit-img]: https://badgen.net/github/last-commit/tunnckoCore/rollup-plugin-prepack/master
+[last-commit-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/commits/master
+
+[downloads-weekly-img]: https://badgen.net/npm/dw/rollup-plugin-prepack?icon=npm
+[downloads-monthly-img]: https://badgen.net/npm/dm/rollup-plugin-prepack?icon=npm
+[downloads-total-img]: https://badgen.net/npm/dt/rollup-plugin-prepack?icon=npm
+
+[renovateapp-url]: https://renovatebot.com
+[renovateapp-img]: https://badgen.net/badge/renovate/enabled/green
+[prs-welcome-img]: https://badgen.net/badge/PRs/welcome/green
+[prs-welcome-url]: http://makeapullrequest.com
+
+<!-- TODO: update icon -->
+
+[paypal-url]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HYJJEZNSGAPGC&source=url
+[paypal-img]: https://badgen.net/badge/PayPal/donate/003087?icon=https://simpleicons.now.sh/paypal/fff
+
+<!-- TODO: update icon -->
+
+[kofi-url]: https://ko-fi.com/tunnckoCore
+[kofi-img]: https://badgen.net/badge/Buy%20me/a%20coffee/29abe0c2?icon=https://rawcdn.githack.com/tunnckoCore/badgen-icons/f8264c6414e0bec449dd86f2241d50a9b89a1203/icons/kofi.svg
+
+<!-- TODO: update icon -->
+
+[bitcoin-url]: https://www.blockchain.com/btc/payment_request?address=3QNHKun1K1SUui1b4Z3KEGPPsWC1TgtnqA&message=Open+Source+Software&amount_local=10&currency=USD
+[bitcoin-img]: https://badgen.net/badge/Bitcoin%20tip/3QNHKun...b4Z3KEGPPsWC1TgtnqA/yellow?icon=https://simpleicons.now.sh/bitcoin/fff
+[keybase-url]: https://keybase.io/tunnckoCore
+[keybase-img]: https://badgen.net/keybase/pgp/tunnckoCore
+[twitter-url]: https://twitter.com/tunnckoCore
+[twitter-img]: https://badgen.net/twitter/follow/tunnckoCore?icon=twitter&color=1da1f2
+[patreon-url]: https://www.patreon.com/bePatron?u=5579781
+[patreon-img]: https://badgen.net/badge/Become/a%20patron/F96854?icon=patreon
+
+<!-- [patreon-img]: https://badgen.net/badge/Patreon/tunnckoCore/F96854?icon=patreon -->
+
+[patreon-sponsor-img]: https://badgen.net/badge/become/a%20sponsor/F96854?icon=patreon
+
+[twitter-share-url]: https://twitter.com/intent/tweet?text=https://github.com/tunnckoCore/rollup-plugin-prepack/tree/master&via=tunnckoCore
+[twitter-share-img]: https://badgen.net/badge/twitter/share/1da1f2?icon=twitter
+[open-issue-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/issues/new
+[tunnckocore_legal]: https://badgen.net/https/liam-badge-daknys6gadky.runkit.sh/com/legal/tunnckocore?label&color=A56016&icon=https://svgshare.com/i/Dt6.svg
+[tunnckocore_consulting]: https://badgen.net/https/liam-badge-daknys6gadky.runkit.sh/com/consulting/tunnckocore?label&color=07ba96&icon=https://svgshare.com/i/Dt6.svg
+[tunnckocore_security]: https://badgen.net/https/liam-badge-daknys6gadky.runkit.sh/com/security/tunnckocore?label&color=ed1848&icon=https://svgshare.com/i/Dt6.svg
+[tunnckocore_opensource]: https://badgen.net/https/liam-badge-daknys6gadky.runkit.sh/com/opensource/tunnckocore?label&color=ff7a2f&icon=https://svgshare.com/i/Dt6.svg
+[tunnckocore_newsletter]: https://badgen.net/https/liam-badge-daknys6gadky.runkit.sh/com/newsletter/tunnckocore?label&color=5199FF&icon=https://svgshare.com/i/Dt6.svg
 
 [always-done]: https://github.com/hybridables/always-done
 [async-done]: https://github.com/gulpjs/async-done
 [base]: https://github.com/node-base/base
-[charlike]: https://github.com/tunnckoCore/charlike
+[charlike]: https://github.com/tunnckoCoreLabs/charlike
 [commitizen]: https://github.com/commitizen/cz-cli
 [dezalgo]: https://github.com/npm/dezalgo
 [once]: https://github.com/isaacs/once
 [standard-version]: https://github.com/conventional-changelog/standard-version
 [verb-generate-readme]: https://github.com/verbose/verb-generate-readme
 [verb]: https://github.com/verbose/verb
-
-[license-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/blob/master/LICENSE
-[license-img]: https://img.shields.io/npm/l/rollup-plugin-prepack.svg
-
-[downloads-url]: https://www.npmjs.com/package/rollup-plugin-prepack
-[downloads-img]: https://img.shields.io/npm/dt/rollup-plugin-prepack.svg
-
-[codeclimate-url]: https://codeclimate.com/github/tunnckoCore/rollup-plugin-prepack
-[codeclimate-img]: https://img.shields.io/codeclimate/github/tunnckoCore/rollup-plugin-prepack.svg
-
-[circle-url]: https://circleci.com/gh/olstenlarck/rollup-plugin-prepack
-[circle-img]: https://img.shields.io/circleci/project/github/olstenlarck/rollup-plugin-prepack/master.svg?label=linux
-
-[appveyor-url]: https://ci.appveyor.com/project/tunnckoCore/rollup-plugin-prepack
-[appveyor-img]: https://img.shields.io/appveyor/ci/tunnckoCore/rollup-plugin-prepack/master.svg?label=windows
-
-[codecov-url]: https://codecov.io/gh/olstenlarck/rollup-plugin-prepack
-[codecov-img]: https://img.shields.io/codecov/c/github/olstenlarck/rollup-plugin-prepack/master.svg?label=codecov
-
-[daviddm-deps-url]: https://david-dm.org/tunnckoCore/rollup-plugin-prepack
-[daviddm-deps-img]: https://img.shields.io/david/tunnckoCore/rollup-plugin-prepack.svg
-
-[daviddm-devdeps-url]: https://david-dm.org/tunnckoCore/rollup-plugin-prepack?type=dev
-[daviddm-devdeps-img]: https://img.shields.io/david/dev/tunnckoCore/rollup-plugin-prepack.svg
-
-[ghtag-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/tags
-[ghtag-img]: https://img.shields.io/github/tag/tunnckoCore/rollup-plugin-prepack.svg?label=github%20tag
-
-[npmv-url]: https://www.npmjs.com/package/rollup-plugin-prepack
-[npmv-img]: https://img.shields.io/npm/v/rollup-plugin-prepack.svg?label=npm%20version
-
-[standard-url]: https://github.com/feross/standard
-[standard-img]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
-
-[paypalme-url]: https://www.paypal.me/tunnckoCore/5usd
-[paypalme-img]: https://img.shields.io/badge/paypal-donate-brightgreen.svg
-
-[czfriendly-url]: http://commitizen.github.io/cz-cli
-[czfriendly-img]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
-
-[gkfriendly-url]: https://greenkeeper.io/
-[gkfriendly-img]: https://img.shields.io/badge/greenkeeper-friendly-brightgreen.svg
-
-[codementor-url]: https://www.codementor.io/tunnckocore?utm_source=github&utm_medium=button&utm_term=tunnckocore&utm_campaign=github
-[codementor-img]: https://img.shields.io/badge/code%20mentor-live%20session-brightgreen.svg
-
-[istanbulcov-url]: https://twitter.com/tunnckoCore/status/841768516965568512
-[istanbulcov-img]: https://img.shields.io/badge/istanbul-400%25-brightgreen.svg
-
-[following-semver-url]: http://semver.org
-[following-semver-img]: https://img.shields.io/badge/following-semver-brightgreen.svg
-
-[strelease-url]: https://github.com/conventional-changelog/standard-version
-[strelease-img]: https://img.shields.io/badge/using-standard%20version-brightgreen.svg
-
-[supportchat-url]: https://gitter.im/tunnckoCore/support
-[supportchat-img]: https://img.shields.io/gitter/room/tunnckoCore/support.svg?colorB=049372
-
-[slackchat-url]: https://tunnckocore-slack.now.sh/
-[slackchat-img]: https://img.shields.io/badge/join-slack%20chat-F62459.svg
-
-[bulgaria-url]: https://www.google.bg/search?q=Sofia%2C+Bulgaria "One of the top 10 best places for start-up business in the world, especially in IT technologies"
-
-[changelogmd-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/blob/master/CHANGELOG.md
-[conventions-url]: https://github.com/bcoe/conventional-changelog-standard/blob/master/convention.md
-[tunnckocore-twitter-url]: https://twitter.com/tunnckoCore
-[opensource-project-url]: http://openopensource.org
-[nyc-istanbul-url]: https://istanbul.js.org
-[circle-ci-url]: https://circleci.com
-[appveyor-ci-url]: https://appveyor.com
-[codecov-coverage-url]: https://codecov.io
-[semver-url]: http://semver.org
-[eslint-url]: http://eslint.org
-[conventional-messages-url]: https://github.com/conventional-changelog/conventional-changelog
-[gk-integration-url]: https://github.com/integration/greenkeeper
-[daviddm-url]: https://david-dm.org
-[open-issue-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/issues/new
-[contributing-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/blob/master/CONTRIBUTING.md
-[absolute-coverage-url]: https://github.com/tunnckoCore/rollup-plugin-prepack/blob/master/package.json
-

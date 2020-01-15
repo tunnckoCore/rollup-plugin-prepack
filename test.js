@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /*!
  * rollup-plugin-prepack <https://github.com/tunnckoCore/rollup-plugin-prepack>
  *
@@ -5,49 +6,60 @@
  * Released under the MIT license.
  */
 
-/* jshint asi:true */
+/* eslint-env jest */
 
 'use strict'
 
-const test = require('mukla')
+const fs = require('fs')
+const path = require('path')
+// const test = require('mukla')
 const prepack = require('./index')
 
 const rollup = require('rollup')
 
-test('should main export return an object with transform() fn', (done) => {
+test('should main export return an object with transform() fn', () => {
   const plugin = prepack()
 
-  test.strictEqual(plugin.name, 'prepack')
-  test.strictEqual(typeof plugin.transform, 'function')
-  done()
+  expect(plugin.name).toEqual('prepack')
+  expect(typeof plugin.transform).toEqual('function')
 })
 
-test('should work as real plugin to rollup', (done) => {
-  const filePath = 'fixtures/main.js'
-  const promise = rollup.rollup({
-    entry: filePath,
-    plugins: [ prepack() ]
-  })
+test('should work as real plugin to rollup', () => {
+  // const expected = {
+  //   'abstraction-tax.js': `var some;\n(function () {\n  var _$0 = this;\n\n  var _0 = {\n    _a: \"A\",\n    _b: \"B\",\n    _4: 42\n  };\n  _$0.some = _0;\n}).call(this);`,
+  //   'env-branching.js': `var fib;\n(function () {\n  var _$1 = this;\n\n  var _7 = function (x) {\n    return x <= 1 ? x : fib(x - 1) + fib(x - 2);\n  };\n\n  _$1.fib = _7;\n\n  var _$0 = _$1.Date.now();\n\n  var _4 = 0 === _$0;\n\n  var _1 = _4 ? 55 : _$0;\n\n  _$1.result = _1;\n}).call(this);`,
+  //   'fibinacci.js': `(function () {\n  var _$0 = this;\n\n  _$0.x = 610;\n}).call(this);`,
+  //   'hello-world.js': `var hello, world, s;\n(function () {\n  var _$0 = this;\n\n  var _5 = function () {\n    return 'hello';\n  };\n\n  var _6 = function () {\n    return 'world';\n  };\n\n  _$0.hello = _5;\n  _$0.world = _6;\n  _$0.s = \"hello world\";\n  console.log(\"hello world\");\n}).call(this);`
+  // }
 
-  return promise
-    .then(async (bundle) => {
-      const { code } = await bundle.generate({ format: 'cjs' })
-      const expected = /\{\\n\s\svar\s_\$0\s=\sthis;\\n\\n\s\svar\s_0\s=\s\{\\n\s\s\s\s_a:\s\\"A\\",\\n\s\s\s\s_b:\s\\"B\\",\\n\s\s\s\s_4:\s42\\n\s\s\};/
+  const promiseFixtures = fs.readdirSync('./fixtures')
+    .map((x) => path.join(__dirname, 'fixtures', x))
+    .map((fp) =>
+      rollup
+        .rollup({
+          input: fp,
+          plugins: [ prepack() ]
+        })
+        .then((bundle) => bundle.generate({ format: 'cjs' }))
+    )
 
-      test.strictEqual(/var main/.test(code), true)
-      test.strictEqual(expected.test(code), true)
+  return Promise.all(promiseFixtures)
+    .then((results) => {
+      return Promise.all(results.map(({ output }) => {
+        const { code } = output[0]
 
-      done()
-    }, done)
-    .catch(done)
+        expect(code).toMatchSnapshot()
+        // console.log(code)
+        // test.strictEqual(code.includes(expected[fileName]), true)
+      }))
+    })
 })
 
-test('should transform throws an Error if the code is not valid', (done) => {
+test('should transform throws an Error if the code is not valid', () => {
   function fixture () {
     const plugin = prepack()
     plugin.transform('foo bar baz')
   }
 
-  test.throws(fixture, /Syntax error: Unexpected token, expected/)
-  done()
+  expect(fixture).toThrow(/Syntax error: Unexpected token, expected/)
 })
