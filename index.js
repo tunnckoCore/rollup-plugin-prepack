@@ -8,21 +8,21 @@
 'use strict'
 
 const prepack = require('prepack')
-const utils = require('rollup-pluginutils')
 
 module.exports = function rollupPluginPrepack (options) {
-  options = Object.assign({ include: '**/*.js' }, options)
-
-  const filter = utils.createFilter(options.include, options.exclude)
-  const handle = (str) => `export default ${JSON.stringify(str.trim())}`
-
   return {
     name: 'prepack',
-    transform: (source, id) => {
-      if (!filter(id)) return null
+    transform: (fileContents) => {
+      const handle = (str) => `export default ${JSON.stringify(str.trim())}`
 
-      let { code, map } = prepack.prepack(source, options)
-      return { code: handle(code), map }
+      try {
+        const sources = [{ fileContents }]
+        const { code, map } = prepack.prepackSources(sources, options)
+
+        return { code: handle(code), map }
+      } catch (err) {
+        throw err
+      }
     }
   }
 }

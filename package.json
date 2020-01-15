@@ -20,8 +20,7 @@
     "commit": "npm-run-all -s test git"
   },
   "dependencies": {
-    "prepack": "^0.2.0",
-    "rollup-pluginutils": "^2.0.1"
+    "prepack": "^0.2.38"
   },
   "devDependencies": {
     "commitizen": "^2.9.6",
@@ -30,7 +29,7 @@
     "npm-run-all": "^4.0.2",
     "nyc": "^10.3.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^0.41.6",
+    "rollup": "^0.60.4",
     "standard": "^10.0.2",
     "standard-version": "^4.0.0"
   },

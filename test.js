@@ -22,32 +22,32 @@ test('should main export return an object with transform() fn', (done) => {
   done()
 })
 
-test('should transform return `null` if `id` not match to filter', (done) => {
-  const plugin = prepack({
-    include: 'foo.html'
-  })
-  const result = plugin.transform('foo bar', 'bar.js')
-
-  test.strictEqual(result, null, 'should `result` of transform() be null')
-  done()
-})
-
 test('should work as real plugin to rollup', (done) => {
+  const filePath = 'fixtures/main.js'
   const promise = rollup.rollup({
-    entry: 'fixtures/main.js',
-    plugins: [prepack()]
+    entry: filePath,
+    plugins: [ prepack() ]
   })
 
   return promise
-    .then((bundle) => {
-      const result = bundle.generate({ format: 'cjs' })
+    .then(async (bundle) => {
+      const { code } = await bundle.generate({ format: 'cjs' })
+      const expected = /\{\\n\s\svar\s_\$0\s=\sthis;\\n\\n\s\svar\s_0\s=\s\{\\n\s\s\s\s_a:\s\\"A\\",\\n\s\s\s\s_b:\s\\"B\\",\\n\s\s\s\s_4:\s42\\n\s\s\};/
 
-      test.strictEqual(/var main/.test(result.code), true)
-      test.strictEqual(
-        /_a = \\"A\\";\\n_b = \\"B\\";\\n_4 = 42;/.test(result.code),
-        true
-      )
+      test.strictEqual(/var main/.test(code), true)
+      test.strictEqual(expected.test(code), true)
+
       done()
     }, done)
     .catch(done)
+})
+
+test('should transform throws an Error if the code is not valid', (done) => {
+  function fixture () {
+    const plugin = prepack()
+    plugin.transform('foo bar baz')
+  }
+
+  test.throws(fixture, /Syntax error: Unexpected token, expected/)
+  done()
 })
