@@ -30,7 +30,7 @@
     "prepack": "^0.2.54",
     "rollup": "^1.29.0",
     "standard": "^10.0.2",
-    "standard-version": "^4.0.0"
+    "standard-version": "^8.0.1"
   },
   "peerDependencies": {
     "prepack": "^0.2.54"
